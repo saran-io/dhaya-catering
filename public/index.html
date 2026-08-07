@@ -389,6 +389,26 @@
   .poster-cta .txt { flex: 1 1 300px; }
   .fine { font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 18px; }
 
+  /* Services poster band */
+  .svc { background: var(--cream-50); }
+  .svc-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+  .svc-poster { margin: 0; }
+  .svc-poster img {
+    width: 100%; height: auto; display: block; border-radius: var(--radius);
+    box-shadow: var(--shadow-md); cursor: zoom-in;
+  }
+  .svc-txt h2 { font-size: clamp(28px, 3.6vw, 40px); color: var(--brown-900); margin: 6px 0 0; }
+  .svc-txt h2 .accent { color: var(--green-700); }
+  .svc-txt .cta.ghost { border-color: var(--brown-800); color: var(--brown-800); }
+  .svc-txt .ta-sub { color: var(--green-700); font-weight: 600; font-size: 16px; margin: 8px 0 0; }
+  .svc-txt .lede { color: var(--muted); font-size: 16.5px; margin: 12px 0 0; }
+  .svc-list { list-style: none; margin: 20px 0 24px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .svc-list li {
+    background: #fff; border: 1px solid rgba(58,36,24,.1); border-radius: 999px;
+    padding: 7px 14px; font-size: 14px; font-weight: 500; color: var(--brown-800);
+  }
+  @media (max-width: 860px) { .svc-grid { grid-template-columns: 1fr; gap: 28px; } }
+
   /* Lightbox */
   .lightbox {
     position: fixed; inset: 0; z-index: 100; display: none;
@@ -539,6 +559,71 @@
   }
   .float-wa:hover { transform: scale(1.06); }
 
+  /* ===== Banana-leaf thali ===== */
+  .thali { background: var(--white); }
+  .thali .grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 54px; align-items: center; }
+  .thali .shot {
+    border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md);
+    border: 1px solid rgba(58,36,24,.1); cursor: zoom-in; min-width: 0;
+  }
+  .thali .copy { min-width: 0; }
+  .thali h2 { font-size: clamp(28px, 3.6vw, 40px); color: var(--brown-900); }
+  .ta-lead {
+    font-size: clamp(15px, 1.7vw, 18px); font-weight: 600;
+    color: var(--green-700); margin: -4px 0 16px; letter-spacing: .01em;
+  }
+  .thali-list {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 22px; margin: 24px 0 0; padding: 0; list-style: none;
+  }
+  .thali-list li {
+    display: flex; gap: 10px; align-items: baseline; min-width: 0;
+    padding-bottom: 10px; border-bottom: 1px dashed rgba(58,36,24,.16);
+  }
+  .thali-list .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--green-600);
+    flex-shrink: 0; transform: translateY(-2px);
+  }
+  .thali-list b { display: block; font-size: 14.5px; font-weight: 600; color: var(--brown-900); }
+  .thali-list .ta { display: block; font-size: 12.5px; color: var(--muted); }
+
+  /* ===== Occasions ===== */
+  .occ-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); }
+  .occ {
+    background: var(--white); border: 1px solid rgba(58,36,24,.09); border-radius: 16px;
+    padding: 20px; display: flex; gap: 13px; align-items: flex-start; min-width: 0;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .occ:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(245,197,24,.55); }
+  .occ .ic {
+    flex-shrink: 0; width: 38px; height: 38px; border-radius: 11px;
+    background: var(--cream-100); color: var(--green-700); display: grid; place-items: center;
+  }
+  .occ .t { min-width: 0; }
+  .occ h3 { font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 600; margin: 0 0 2px; color: var(--brown-900); }
+  .occ .ta { margin: 0; font-size: 13px; color: var(--muted); }
+
+  /* ===== Dhaya Group of Companies ===== */
+  .group-band { margin-top: 32px; padding-top: 26px; border-top: 1px solid rgba(58,36,24,.14); }
+  .group-band .glabel {
+    font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 13px;
+  }
+  .group-list { display: flex; flex-wrap: wrap; gap: 9px; padding: 0; margin: 0; list-style: none; }
+  .group-list li {
+    font-size: 13px; font-weight: 600; color: var(--brown-800);
+    background: var(--white); border: 1px solid rgba(58,36,24,.12);
+    border-radius: 999px; padding: 7px 15px;
+  }
+  .group-list li.self { background: var(--yellow); border-color: var(--yellow-deep); color: var(--brown-900); }
+
+  @media (max-width: 900px) {
+    .thali .grid { grid-template-columns: 1fr; gap: 34px; }
+  }
+  @media (max-width: 520px) {
+    .thali-list { grid-template-columns: 1fr; }
+  }
+
   /* Reveal on scroll */
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -594,6 +679,7 @@
       <a href="#plans">Meal Plans</a>
       <a href="#menu">Weekly Menu</a>
       <a href="#offer">Catering</a>
+      <a href="#occasions">Occasions</a>
       <a href="#why">Why Us</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -650,6 +736,38 @@
 </div>
 
 <main id="main">
+
+<!-- Services poster -->
+<section id="services" class="svc">
+  <div class="wrap">
+    <div class="svc-grid">
+      <figure class="svc-poster reveal">
+        <img src="assets/services-poster.jpg" alt="Dhaya Catering — hassle-free catering services for weddings, corporate events, private celebrations, birthday parties, social gatherings and outdoor catering" width="1254" height="1254" loading="eager" data-zoom />
+      </figure>
+      <div class="svc-txt reveal">
+        <span class="eyebrow">Our services</span>
+        <h2>Hassle-free catering <span class="accent">for every occasion.</span></h2>
+        <p class="ta-sub ta">அனைத்து விழாக்களுக்கும் சிறந்த கேட்டரிங் சேவை</p>
+        <p class="lede">Delicious food. Flawless service. Memorable moments. We handle the cooking, the serving and the clearing up — you stay with your guests.</p>
+        <ul class="svc-list">
+          <li>Weddings</li>
+          <li>Corporate Events</li>
+          <li>Private Celebrations</li>
+          <li>Birthday Parties</li>
+          <li>Social Gatherings</li>
+          <li>Outdoor Catering</li>
+        </ul>
+        <div class="hero-ctas">
+          <a class="cta wa" href="https://wa.me/919952305413?text=Hi%20Dhaya%20Catering%2C%20I%27d%20like%20to%20book%20catering%20for%20an%20event." target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A12 12 0 0 0 3.5 20.52L2 22l1.55-1.5A12 12 0 1 0 20.52 3.48Zm-8.52 18a10 10 0 0 1-5.1-1.4l-.36-.21-3.04.8.81-2.96-.24-.38a10 10 0 1 1 7.93 4.15Zm5.49-7.49c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.65.07a8.18 8.18 0 0 1-2.4-1.48 9.05 9.05 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.61s.3-.35.45-.52.2-.3.3-.5.05-.37-.02-.52-.67-1.62-.92-2.22c-.24-.58-.49-.5-.67-.51h-.57a1.1 1.1 0 0 0-.8.37 3.34 3.34 0 0 0-1.04 2.49 5.79 5.79 0 0 0 1.21 3.08 13.27 13.27 0 0 0 5.07 4.49c.71.31 1.26.49 1.69.63a4.07 4.07 0 0 0 1.87.12 3.05 3.05 0 0 0 2-1.41 2.5 2.5 0 0 0 .17-1.41c-.07-.13-.27-.2-.57-.35Z"/></svg>
+            Book now
+          </a>
+          <a class="cta ghost" href="assets/services-poster.jpg" download="dhaya-catering-services.jpg">Download poster ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Meal plans -->
 <section id="plans" class="plans">
@@ -920,6 +1038,37 @@
   </div>
 </section>
 
+<!-- Anatomy of a banana-leaf thali -->
+<section id="thali" class="thali">
+  <div class="wrap">
+    <div class="grid">
+      <div class="shot reveal">
+        <img src="assets/thali-anatomy.jpg" alt="The anatomy of a Dhaya Catering banana-leaf thali, with each item labelled in English and Tamil" width="1254" height="1254" loading="lazy" data-zoom />
+      </div>
+      <div class="copy reveal">
+        <span class="eyebrow">Our signature spread</span>
+        <h2>The anatomy of a banana-leaf thali.</h2>
+        <p class="ta-lead ta">வாழை இலை சாப்பாடு</p>
+        <p style="color: var(--muted); font-size: 16.5px;">Eleven components, laid out the way they have been served in Tamil homes for generations — sweet first, rice at the centre, pickle and pappadam to the right. This is the spread we bring to weddings, house functions and corporate lunches.</p>
+        <ul class="thali-list">
+          <li><span class="dot"></span><div><b>Basmati Rice</b><span class="ta">பாஸ்மதி சோறு</span></div></li>
+          <li><span class="dot"></span><div><b>Rasam</b><span class="ta">ரசம்</span></div></li>
+          <li><span class="dot"></span><div><b>Payasam</b><span class="ta">பாயாசம்</span></div></li>
+          <li><span class="dot"></span><div><b>Vadai</b><span class="ta">வடை</span></div></li>
+          <li><span class="dot"></span><div><b>Papadam</b><span class="ta">அப்பளம்</span></div></li>
+          <li><span class="dot"></span><div><b>Coconut Chutney</b><span class="ta">தேங்காய் சட்னி</span></div></li>
+          <li><span class="dot"></span><div><b>Cucumber Raita</b><span class="ta">வெள்ளரி தயிர்</span></div></li>
+          <li><span class="dot"></span><div><b>Two Vegetables of the Day</b><span class="ta">காய்கறி</span></div></li>
+          <li><span class="dot"></span><div><b>Fried Bittergourd</b><span class="ta">வறுத்த பாகற்காய்</span></div></li>
+          <li><span class="dot"></span><div><b>Mango Pickle</b><span class="ta">மாங்காய் ஊறுகாய்</span></div></li>
+          <li><span class="dot"></span><div><b>Curd Chilli</b><span class="ta">மோர் மிளகாய்</span></div></li>
+        </ul>
+        <p class="fine" style="text-align:left; margin-top:16px;">Tap the image to view it full size. Vegetables change with the season and the day's market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- What We Offer -->
 <section id="offer" class="plans">
   <div class="wrap">
@@ -969,6 +1118,61 @@
         <h3>Cloud Kitchen</h3>
         <p>Follow <a href="https://instagram.com/dhayacloudkitchen" target="_blank" rel="noopener" style="color:var(--brown-800);font-weight:600">@dhayacloudkitchen</a> for daily specials and pop-up menus.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Occasions -->
+<section id="occasions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Occasions</span>
+      <h2>Whatever the function, we're there.</h2>
+      <p class="ta-sub ta" style="color: var(--green-700); font-weight: 600; font-size: 16px; margin-top: 8px;">எந்த விழாவாக இருந்தாலும் — Dhaya Catering உங்களுடன்!</p>
+      <p>From a twenty-guest ear-piercing at home to a five-hundred-plate wedding, the same kitchen, the same standards.</p>
+    </div>
+    <div class="occ-grid">
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="15" r="5.2" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="15" r="5.2" stroke="currentColor" stroke-width="2"/><path d="M9 5.5 12 3l3 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="t"><h3>Weddings</h3><p class="ta">திருமணம்</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 9a5 5 0 1 1 10 0c0 2.4-2 3.2-3 4.5-.8 1-.4 3.2-2.3 3.9A2.7 2.7 0 0 1 8 15.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="1.6" fill="currentColor"/></svg></div>
+        <div class="t"><h3>Ear Piercing</h3><p class="ta">காதணி விழா</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 8.6a4.1 4.1 0 0 1 7 3c0 5-7 9.4-7 9.4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 5.5V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="t"><h3>Baby Shower</h3><p class="ta">வளைகாப்பு</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6H4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 16h16M9 12V8M15 12V8M12 12V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="t"><h3>Birthday Parties</h3><p class="ta">பிறந்தநாள்</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.5 21v-6h5v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div class="t"><h3>House Functions</h3><p class="ta">வீட்டு விழாக்கள்</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="t"><h3>Corporate Events</h3><p class="ta">நிறுவன விழாக்கள்</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9.5" r="2.3" stroke="currentColor" stroke-width="2"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5M15.5 14.2c2.7.2 4.5 2 4.5 4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="t"><h3>Social Gatherings</h3><p class="ta">சிறப்பு நிகழ்ச்சிகள்</p></div>
+      </div>
+      <div class="occ reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 16V8h11v8H2ZM13 11h4.2l2.8 3v2h-7v-5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="6.5" cy="17.5" r="1.8" stroke="currentColor" stroke-width="2"/><circle cx="16.5" cy="17.5" r="1.8" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="t"><h3>Outdoor Catering</h3><p class="ta">வெளியிட சேவை</p></div>
+      </div>
+    </div>
+
+    <div class="poster-cta reveal">
+      <img class="thumb" src="assets/occasions-poster.jpg" alt="Dhaya Catering Tamil poster listing wedding, birthday, ear-piercing and baby-shower catering" width="190" loading="lazy" data-zoom />
+      <div class="txt">
+        <h3>Breakfast, lunch, dinner, snacks &amp; sweets.</h3>
+        <p>Our full-function poster in Tamil — tap to view it full size, or save it to share with family.</p>
+      </div>
+      <a class="cta ghost" href="assets/occasions-poster.jpg" download="dhaya-catering-occasions.jpg">Download poster ↓</a>
     </div>
   </div>
 </section>
@@ -1024,6 +1228,17 @@
           <div class="stat"><div class="n">21</div><div class="l">Meals a Week</div></div>
           <div class="stat"><div class="n">★ 4.9</div><div class="l">Customer Trust</div></div>
         </div>
+        <div class="group-band">
+          <div class="glabel">Dhaya Group of Companies</div>
+          <ul class="group-list">
+            <li class="self">Dhaya Catering</li>
+            <li>Dhaya Events</li>
+            <li>Dhaya Hospitality</li>
+            <li>Dhaya Foods</li>
+            <li>Dhaya Enterprises</li>
+            <li>Dhaya Properties</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1067,6 +1282,7 @@
             <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="2"/></svg></span>
             <div>
               <span class="label">Email</span>
+              <a href="mailto:dhayacatering@gmail.com">dhayacatering@gmail.com</a><br/>
               <a href="mailto:dhayalr@gmail.com">dhayalr@gmail.com</a>
             </div>
           </li>
